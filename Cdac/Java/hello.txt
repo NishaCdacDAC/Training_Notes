@@ -1,0 +1,11 @@
+
+/*helloprogram*/
+
+public class SayHello
+{
+	public static void main(string s[])
+	{
+		System.out.println("Hello World");
+	}
+}
+

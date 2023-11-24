@@ -1,0 +1,23 @@
+Binary Search Tree :- 
+
+	Here keys (i.e. nodes) are arranged in such a way that for any node all the elements that are on the LHS are smaller than that node and all the elements to the RHS are larger than that node.
+
+	It is useful for searching. Max number of comparisons required to search any element in a binary search tree depends on its height.
+
+
+height of binary tree (min) : log n
+height of binary tree (max) : n
+
+For same set of keys we can generate different binary search trees where maximum height can be n and minimum can be log n. 
+
+Hence min time taken to search in binary search tree is log n and max is n.
+
+Duplicates are not allowed to be stored in Binary Search Tree.
+
+Problem with Binary Search Tree :
+	height of binary search tree doesn't remain under control. It depends on how keys are inserted.
+
+We should always prefer minimum height binary search tree.
+
+
+

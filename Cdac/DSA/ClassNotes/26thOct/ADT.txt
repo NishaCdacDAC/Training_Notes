@@ -1,0 +1,109 @@
+Array as ADT :- 
+
+properties (data elements): elements stored in the array
+
+behaviors (operations): 
+
+	1) traversal :
+		Algorithm :- 
+		Step 1 : initialize variable i with 0
+		Step 2 : repeat following steps till i is less than size_of_array
+			Step 2.1 : display element from array at ith position
+			Step 2.2 : increment i by 1
+		Step 3 : End
+
+	2) insertion :
+		Algorithm :-
+		Step 1 : create a variable num to store the number to be inserted
+		Step 2 : create a variable position to store the position in the 			 array where the number is to be inserted 
+		Step 3 : create a variable i and initialize it with size_of_array - 1 value;
+		Step 4 : repeat following steps till i is greater than equal to position - 1
+	
+			Step 4.1 : assign value of ith element in i+1th element
+			Step 4.2 : decrement value of i
+		Step 5 : assign num to position-1 th element of the array
+		Step 6 : increase size of array by 1
+		Step 7 : End
+
+	       	
+	3) deletion : 
+		Algorithm :-
+		Step 1 : create a variable position to store the the position in the 			 array from where the element is to be deleted.
+		Step 2 : create a variable i and initialize it with position - 1 value;
+		Step 3 : repeat following steps till i is less than size_of_array
+			
+			Step 3.1 : assign value of i+1th element to ith element
+			Step 3.2 : increase value of i
+
+		Step 4 : decrease size of array by 1
+		Step 5 : end
+			
+	4) search
+	5) update
+
+
+
+Stack as ADT :- (LIFO order : Last In First Out)
+	
+properties : elements stored in the stack
+
+behaviors (operations): 
+
+The following are some common operations implemented on the stack:
+
+push(): When we insert an element in a stack then the operation is known as push. If the stack is full then the overflow condition occurs.
+
+pop(): When we delete an element from the stack, the operation is known as pop. If the stack is empty means that no element exists in the stack, this state is known as an underflow state.
+
+isEmpty(): It determines whether the stack is empty or not.
+
+isFull(): It determines whether the stack is full or not.
+
+peek(): It returns the top element.
+
+count(): It returns the total number of elements available in a stack.
+
+display(): It prints all the elements available in the stack.
+
+Uses of Stack :-
+
+1) undo/redo
+2) string reversal 
+3) browser history
+
+
+Queue as ADT :- (FIFO manner : First In First Out)
+	new element gets added at the rear end of the queue whereas element gets removed from front of the queue.
+	
+properties : elements stored in the queue
+
+behaviors (operations): 
+
+The following are some common operations implemented on the queue:
+
+enqueue(): When we insert an element in a queue then the operation is known as an "enqueue". If the queue is full then the overflow condition occurs. Element is always inserted at rear end of the queue.
+
+dequeue(): When we delete an element from queue, the operation is known as a "dequeue". If the queue is empty , this state is known as an underflow state. Element is always removed from the front of the queue.
+
+isEmpty(): It determines whether the queue is empty or not.
+
+isFull(): It determines whether the queue is full or not.
+
+peek(): It returns the front element.
+
+count(): It returns the total number of elements available in a queue.
+
+display(): It prints all the elements available in the queue.
+
+
+Uses of Queue :-
+
+1) network devices such as printers use it for holding print jobs
+2) media players use it to manage say songs list
+3) FCFS scheduling
+4) Mail queues 
+
+
+
+
+

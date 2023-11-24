@@ -1,0 +1,38 @@
+
+from main() :-	print(1); //1st call for print()
+
+
+1st call for print() :-
+
+	n = 1
+	condition becomes true
+		
+		print 1 on screen
+		print(n+1);  //print(2)  : 2nd call for print()
+
+2nd call for print() :-
+	
+	n = 2
+	condition becomes true
+
+		print 2 on screen
+		print(n+1);  //print(3) :  3rd call for print()				
+
+
+3rd call for print() :-
+
+	n = 3
+	condition becomes true
+
+		print 3 on screen
+		print(n+1);  //print(4)	:  4th call for print()
+
+
+4th call for print() :-
+
+	n = 4
+	condition becomes false	
+		
+		function returns;
+
+

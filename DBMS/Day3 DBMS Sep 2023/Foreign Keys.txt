@@ -1,0 +1,60 @@
+Foreign Key: Foreign Keys are those keys that identify the
+ relation between the two tables.
+
+The foreign key of the child table is the primary key of the
+master table.
+
+
+Syntax : 
+
+CREATE TABLE table1 (
+column1 datatype,
+column2 datatype,
+column3 datatype,
+:
+:
+column N datatype
+Foreign key (column N) references table2(Column N)
+);
+
+Table 2:
+
+CREATE TABLE table2 (
+column N datatype PRIMARY KEY
+column1 datatype,
+column2 datatype,
+column3 datatype,
+:
+:
+column N datatype
+
+);
+
+
+
+CREATE TABLE CUSTOMERS(CustomerId int primary key,
+CustomerName varchar(20),
+OrderId int,
+foreign key Customers(OrderId) references Orders.OrderId
+
+);
+
+
+CREATE TABLE CUSTOMERS(CustomerId int primary key,
+CustomerName varchar(20),
+OrderId int,
+foreign key (OrderId) references Orders(OrderId)
+
+);
+CREATE TABLE ORDERS(OrderId int primary key,
+OrderDate date
+);
+
+insert into orders values(2,'2023-11-08');
+insert into orders values(1,'2023-06-12');
+
+insert into orders values(3,'2023-04-13'),(4,'2023-05-10'),
+(5,'2023-10-13'),(6,'2022-09-06');
+
+insert into customers values
+(001,'Amardip',2),(002,'Vikas',6),(003,'Riya',4);

@@ -1,0 +1,263 @@
+recursion :-
+	It is a process/scenario where a method calls itself repeatedly.
+
+Types of recursion :-
+
+1) tail recursion : if recursive call is last statement in the function. 
+	Function performs operations only at calling time , not at returning time. 
+	Function performs operations only during ascending phase , not during descending phase. 
+	loop is more efficient than this type of recursion.	
+ 
+2) head recursion : if recursive call is first statement in the function. 
+	Function performs operations only at returning time , not at calling time.
+	Function performs operations only during descending phase.
+ 
+3) tree recursion : if a function calls itself recursively more than 1 times. 	
+
+4) indirect recursion : function calls another function and forms a cycle.
+
+void method1(int x) {
+	if(x > 0) {
+		print(x);
+		method2(x-1);
+	}
+}
+
+void method2(int x) {
+	if(x > 0) {
+		print(x);
+		method1(x/2);
+	}
+}
+
+method1(20);
+
+
+5) nested recursion : recursive function passes recursive call as a parameter.
+
+int method(int n) {
+	if(n > 50)
+		return n - 10;
+	else 
+		return method(method(n + 11));
+} 
+
+method(45);
+
+
+
+	
+  sum of first n natural numbers : 1 + 2 + 3 + 4 + ... + n
+
+  direct formula :- sum(n) = n(n+1)/2
+
+Using Loop :-
+
+	int sum = 0;
+
+	for(int i = 1 ; i <= 10 ; i++) {
+		sum = sum + i;
+	}	 
+
+
+*) sum of first n natural numbers : 	sum(n) = 1 + 2 + 3 + ... + n
+					i.e. sum(n) = 1 + 2 + 3 + ... + n-1 + n
+
+   sum(n) = sum(n-1) + n
+
+int sum(int n) {
+	if(n == 0)
+	 return 0;
+	else
+	 return sum(n - 1) + n;
+}
+
+n = 3
+
+	1st call :-  sum(3) (adding 3 : pending)  (return 3 + 3 => 6)
+
+	2nd call :-  sum(2) (adding 2 : pending)  (return 1 + 2 => 3)
+
+	3rd call :-  sum(1) (adding 1 : pending)  (return 0 + 1 => 1)
+
+	4th call :-  sum(0) (return 0)
+	
+			
+
+
+
+
+
+
+
+
+
+
+
+
+*) factorial of a number : 
+
+	fact(5) = 1 * 2 * 3 * 4 * 5 = 120
+
+	fact(n) = 1 * 2 * 3 * ... * n = n!
+	
+	fact(n) = 1 * 2 * 3 * ... * (n-1) * n
+
+	fact(n) = fact(n-1) * n     (0! , 1! = 1)
+
+
+	int fact(int n) {
+		if(n == 0 || n == 1)
+		return 1;
+		else
+		return fact(n-1) * n;		
+	}
+
+	fact(4) :-
+	
+	1st call :-  fact(4)	(multiplying by 4 : pending)	(return 6 * 4 = 24)
+			
+	2nd call :-  fact(3)	(multiplying by 3 : pending)	(return 2 * 3)
+
+	3rd call :-  fact(2)	(multiplying by 2 : pending)	(return 1 * 2)
+
+	4th call :-  fact(1)	(return 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*) m raised to n : 
+	
+	m raised to n  => m^n => m * m * m * .... for n times
+	
+	pow(m,n) = (m * m * m * ... for n-1 times) * m
+
+	pow(m,n) = pow(m,n-1) * m		
+
+	
+	m = 2
+	n = 5
+
+	pow(2,5) = pow(2,4) * 2
+
+	int pow(int m,int n) {
+		if(n == 0)
+		return 1;
+		else
+		return pow(m,n-1) * m;
+	}
+
+	pow(2,4)
+
+	1st call :-	pow(2,4)	(multiplying by m (i.e. 2) : pending)	(return 2 * 8)
+
+	2nd call :- 	pow(2,3)	(multiplying by m (i.e. 2) : pending)	(return 2 * 4)
+
+	3rd call :-     pow(2,2)	(multiplying by m (i.e. 2) : pending)	(return 2 * 2)
+
+	4th call :-	pow(2,1)	(multiplying by m (i.e. 2) : pending)	(return 2 * 1)
+
+	5th call :-	pow(2,0)	(return 1)	
+
+
+
+
+
+	
+
+
+
+
+
+*) fibonacci series : 
+
+	0 	1 	1 	2 	3 	5 	8 	13
+
+	every term is sum of previous 2 terms
+
+	for n = 0  , answer : 0
+	for n = 1  , answer : 1
+
+	fib(n) :- will give you nth term in fibonacci series
+
+	fib(n) =  fib(n-2) + fib(n-1)
+
+	int fib(int n) {
+		if(n == 0)
+		 return 0;
+
+		if(n == 1)
+		 return 1;
+
+		return fib(n-2) + fib(n-1);	
+	}	
+
+	Draw recusrion tree for fib(5).
+
+
+
+
+Loop for fibonacci series :-
+
+	int t0 = 0, t1 = 1 , sum = 0;
+	if(n<=1)
+	return 1;
+
+	for(int i = 2 ; i <= n ; i++) {
+		sum = t0 + t1;
+		t0 = t1;
+		t1 = sum;		
+	}
+
+	return sum;
+
+
+	n = 5
+	t0 = 0 , t1 = 1 , sum = 0
+
+	1st iteration :-
+		i = 2
+		sum = 0 + 1 = 1
+		t0 = 1
+		t1 = 1
+
+	2nd iteration :-
+		i = 3
+		sum = 1 + 1 = 2
+		t0 = 1
+		t1 = 2
+
+	3rd iteration :-
+		i = 4
+		sum = 1 + 2 = 3
+		t0 = 2
+		t1 = 3
+
+	4th iteration :-
+		i = 5
+		sum = 2 + 3 = 5
+		t0 = 3
+		t1 = 5
+
+	5th ieration :-
+		i = 6
+			
+	
+
+
+
+
+
+	
+
+

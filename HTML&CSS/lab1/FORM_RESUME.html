@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM RESUME</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #form-container {
+            background-color: #ffc0cb; /* Pink color for the entire form */
+            border: 2px solid #333;
+            padding: 20px;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 25%; 
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 6px;
+        }
+
+        .horizontal-options {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .boxed-section {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #333; /* Added a border to the box */
+        }
+
+        .button-box {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 15px; /* Added margin to separate from the address box */
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 6px; 
+            border: none;
+            cursor: pointer;
+            width: 20%; 
+            margin-right: 10px; 
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <h1>Enter Your Details</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your first name here" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <div class="boxed-section">
+                <label for="nationality">Nationality:</label>
+                <select id="nationality" name="nationality">
+                    <option value="indian">Indian</option>
+                    <option value="srilankan">Sri Lankan</option>
+                    <option value="mexikan">Mexican</option>
+                </select>
+
+                <label for="nativity">Nativity:</label>
+                <input type="text" id="nativity" name="nativity">
+
+                <label for="district">District:</label>
+                <input type="text" id="district" name="district">
+            </div>
+
+            <label>Hobbies:</label>
+            <div class="horizontal-options">
+                <input type="checkbox" id="playingGames" name="hobbies" value="playingGames">
+                <label for="playingGames">Playing Games</label>
+                <input type="checkbox" id="watchingTV" name="hobbies" value="watchingTV">
+                <label for="watchingTV">Watching TV</label>
+                <input type="checkbox" id="reading" name="hobbies" value="reading">
+                <label for="reading">Reading</label>
+            </div>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" style="height: 80px;"></textarea>
+
+            <div class="button-box">
+                <input type="submit" id="submit" value="Submit">
+                <input type="reset" id="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

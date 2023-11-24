@@ -1,0 +1,33 @@
+stack algo :-
+
+In an empty stack : top = -1
+take one variable : max = something and create an array of that size
+
+
+push operation :- 
+
+begin   
+    if top = size_of_stack - 1 then stack full   
+    top = top + 1  
+    stack (top) : = item;  
+end   
+
+
+
+pop operation :- 
+
+begin   
+    if top = -1 then stack empty;   
+    item := stack(top);  
+    top = top - 1;  
+end;  
+
+
+
+peek operation :-
+
+Begin   
+    if top = -1 then stack empty    
+    item = stack[top]   
+    return item  
+End   

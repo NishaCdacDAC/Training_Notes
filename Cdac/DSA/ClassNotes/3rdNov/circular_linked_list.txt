@@ -1,0 +1,26 @@
+Operations on Circular Linked List :-
+
+1) Insertion at the beginning of the list: To insert a node at the beginning of the list, follow these steps: 
+
+Create a node, say T. 
+Make T -> next = last -> next. 
+last -> next = T. 
+
+2) Insertion at the end of the list: To insert a node at the end of the list, follow these steps: 
+
+Create a node, say T. 
+Make T -> next = last -> next; 
+last -> next = T. 
+last = T. 
+
+3) traverse :-
+
+	if(last == null)
+	return;
+
+	Node first = last.next;
+	while(first != last) {
+		System.out.println(first.data);
+		first = first.next;
+	}
+	System.out.println(first.data);

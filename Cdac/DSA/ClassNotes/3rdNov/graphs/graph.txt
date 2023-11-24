@@ -1,0 +1,76 @@
+Graph :
+	It is defined as collection of vertices and edges. G = (V,E)
+
+*) Directed Graph : If edges have directions(arrows) then it is called as "Directed Graph" . There will be incoming and outgoing edges.
+
+2) If there is an edge connecting the same vertex then it is called as "Loop".
+
+3) If there are incoming and outgoing edges between 2 vertices then they are called as "parallel edges".
+
+4) Number of incoming edges for a node is called as "indegree" , whereas number of outgoing edges from a node is called as "outdegree".
+
+5) If 2 vertices are connected together using edge then they are called as "Adjacent Vertices"
+
+6) If a graph doesn't have self loop and parallel edges then it is called as "Simple DiGraph"
+
+
+*) Non-Directed Graph : Graph with non-directed edges is known as "Non-Directed Graph" or simply "Graph". number of edges connected to vertex here will be considered as "degree".
+
+*) Non-Connected Graph : Graph with multiple components not connected with each other. If there are any vertices whose removal will convert the connected components(graph) into non-connected then those vetices are called as "Articulation Points"
+
+*) Strongly Connected Graph : In a directed graph if we are able to reach every other vertices from a vertex then it is called a "Strongly Connected Graph".   
+ 
+*) Path : set of all vertices in between a pair of vertex.
+
+*) Cycle : If a path brings us back to the vertex we had started from then it is called as 'cycle'.
+
+*) Directed Acyclic Graph (DAG) : directed graph having no cycles in it.
+
+*) DAG's vertices can be arranged linearly in a single line such that edges are going only in fwd direction then it is called as "Topological Ordering"of vertices.
+
+
+*) representing a graph using adjacency matrix : time taken O(n^2) (as we have n*n matrix) [n is number of vertices]
+
+*) representing a graph using adjacency list : time taken number of vertices and number of edges
+i.e. n + n = O(n)	
+	
+	
+*) Traversal In Graph :-
+
+	a) visiting a vertex
+	b) exploring a vertex
+
+1) BFS (Breadth First Search) :
+	A graph without any cycle or closed edges is a Tree. Traversal can be started from any vertex.
+When we visit a vertex , it is to be explored completely. (i.e. all adjacent nodes are to be visited , order can be anything)
+	At the end "BFS spanning tree" is created , dotted edges are called as "cross edges". We visit n vertices here hence time taken is O(n).
+
+2) DFS (Depth First Search) : [similar to Pre-order traversal]
+	It uses stack. Here also we can select any vertex as starting vertex. Expore the selected vertex for one next vertex and then suspend its exploration. If exploration of a vertex is suspended push it into the stack. 
+	As all vertices are being visited , time is O(n)
+
+
+
+
+
+
+Spanning Tree :- 
+	Sub graph of a graph having all vertices but n-1 edges and there is no cycle and graph must be connected.
+
+
+
+Prim's Algorithm (for finding minimum cost spanning tree) :- O(n^2) or O(nlogn : if heap is used)
+
+1) Select min cost edge from the graph
+2) Select next min cost edge from the graph in such a way that it should be connected to the previously selected vertices.
+3) repeat above 2 steps until all vertices are considered.
+
+Kruskal's Algorithm : 
+1) Select min cost edge from the graph 
+2) repeat above step but dont select an edge that will form a cycle.
+3) If min heap is used O(nlogn)
+
+
+
+
+

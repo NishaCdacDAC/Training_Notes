@@ -1,0 +1,10 @@
+To overcome issue of Binary Search Tree , balanced BST is created by going for rotations. Rotations are done only on 3 nodes.
+
+AVL Tree :-
+	It is a type of Binary Search Tree. It is a height balanced binary search tree. 
+
+Balance factor is calculated for each node.
+
+balance factor = height of left subtree - height of right subtree 
+bf = hl - hr = {-1,0,1}
+

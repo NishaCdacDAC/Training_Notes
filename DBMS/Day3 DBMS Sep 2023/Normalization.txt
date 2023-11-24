@@ -1,0 +1,55 @@
+Normalization: It is the technique to remove or reduce duplicacy 
+from the table.
+
+
+Anomalies present in an unnormalized table:
+
+1) Insertion Anomaly
+2) Deletion Anomaly
+3) Updation Anomaly
+
+Anomalies: Any problems that occur due to certain occasions.
+
+
+First Normal Form (1NF):
+
+It states that a table should not contain multivalued attributes.
+
+Second Normal Form (2NF):
+
+For a table to be in 2nd Normal form:
+
+1) The table should be in 1NF.
+2) All the non-prime attributes should be fully functionally dependent 
+   on the primary key.
+   In simple words, there must not be any partial dependencies.
+
+Third Normal Form (3NF):
+
+For a table to be in 3rd Normal Form:
+
+1) The table must be in 2NF.
+2) There should be no transitive dependencies between the 
+   prime attribute and non-prime attribute (i.e. a non-prime attribute 
+   must not be determining another non-prime attribute).
+
+
+Boyce Codd Normal Form (BCNF): 
+
+For a table to be in BCNF:
+
+1) The table must be in 3rd normal form.
+2) For every functional dependency(FD), LHS must be the super key.
+ 
+Super key example:
+
+If there is a relation R(A,B) where A ->B, then A is the super key. 
+
+
+
+4th and 5 th NF : Assignment.
+
+
+
+
+ 

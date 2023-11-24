@@ -1,0 +1,169 @@
+
+CREATE DATABASE university;
+USE university;
+
+ Create the "Departments" table:
+ 
+CREATE TABLE Departments (
+    department_id INT AUTO_INCREMENT PRIMARY KEY,
+    department_name VARCHAR(25) NOT NULL
+);
+DESCRIBE Departments;
+
+-- Insert departments
+INSERT INTO Departments (department_name) VALUES
+    ('Science'),
+    ('Engineering'),
+    ('Arts');
+	SELECT * FROM Departments;
+	
+	
+-- Create the "Programs" table
+CREATE TABLE Programs (
+    program_id INT AUTO_INCREMENT PRIMARY KEY,
+    program_name VARCHAR(30) NOT NULL,
+    department_id INT,
+    total_credit_points_required INT,
+    year_commenced INT,
+    FOREIGN KEY (department_id) REFERENCES Departments(department_id)
+);
+DESCRIBE PROGRAMS;
+
+INSERT INTO Programs (program_name, department_id, total_credit_points_required, year_commenced) VALUES
+    ('Bachelor of Science', 1, 120, 2019),
+    ('Bachelor of Engineering', 2, 150, 2018),
+    ('Bachelor of Arts', 3, 90, 2020);
+	
+SELECT * FROM Programs;
+
+-- Create the "Courses" table
+CREATE TABLE Courses (
+    course_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(30) NOT NULL,
+    program_id INT,
+    credit_point_value INT,
+    year_commenced INT,
+    FOREIGN KEY (program_id) REFERENCES Programs(program_id)
+);
+DESCRIBE courses;
+Insert courses
+
+INSERT INTO Courses (course_name, program_id, credit_point_value, year_commenced) VALUES
+    ('Mathematics', 1, 5, 2019),
+    ('Physics', 1, 5, 2019),
+    ('Computer Science', 2, 4, 2018),
+    ('Electrical Engineering', 2, 4, 2018),
+    ('History', 3, 3, 2020),
+    ('Literature', 3, 3, 2020);
+	
+SELECT * FROM Courses;
+
+-- Create the "Students" table
+CREATE TABLE Students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(25) NOT NULL,
+    date_of_birth DATE,
+    year_enrolled INT
+);
+DESCRIBE Students;
+Insert students
+INSERT INTO Students ( first_name, last_name, date_of_birth, year_enrolled)
+VALUES
+    ('Nisha', 'Elizabeth', '1992-02-15', 2018),
+    ('Alice', 'Koshy', '2000-03-20', 2019),
+    ('Emi', 'Johnson', '2001-07-10', 2020),
+	('Mathew', 'Luke', '2000-03-20', 2020),
+	 ('Alice', 'Koshy', '2001-08-25', 2018),
+	('Anu', 'Mariam', '2000-03-20', 2018);
+SELECT * FROM Students;
+-- Create the "Enrollments" table to track student enrollments in programs
+CREATE TABLE Enrollments (
+    enrollment_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    program_id INT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (program_id) REFERENCES Programs(program_id)
+);
+DESCRIBE Enrollments;
+Insert student enrollments
+INSERT INTO Enrollments (student_id, program_id)
+VALUES
+    (1, 1),
+    (2, 2),
+    (3, 1);
+SELECT * FROM Enrollments;
+-- Create the "CourseRegistrations" table to track student course registrations
+CREATE TABLE CourseRegistrations (
+    registration_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    year_attempted INT,
+    semester_attempted INT,
+    grade VARCHAR(2),
+    mark DECIMAL(5, 2),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (course_id) REFERENCES Courses(course_id)
+);
+
+DESCRIBE CourseRegistrations;
+Insert student course registrations
+INSERT INTO CourseRegistrations (student_id, course_id, year_attempted, semester_attempted, grade, mark)
+VALUES
+    (1, 1, 2023, 1, 'A+', 90.5),
+    (2, 6, 2023, 2, 'B+', 78.0),
+    (3, 3, 2023, 1, 'A', 88.0),
+    (4, 5, 2023, 2, 'A+', 92.5),
+    (5, 4, 2023, 1, 'A', 81.5),
+    (6, 2, 2023, 2, 'B', 65.8);
+SELECT * FROM CourseRegistrations;
+
+ALTER TABLE Students
+ADD COLUMN department_id INT;
+
+UPDATE Students
+SET department_id =  1
+
+
+
+ALTER TABLE Students
+ADD CONSTRAINT FK_Students_Departments
+FOREIGN KEY (department_id)
+REFERENCES Departments(department_id);
+
+
+
+
+SELECT Students.student_id, Students.first_name, Students.last_name
+FROM Students
+INNER JOIN Departments ON Students.department_id = Departments.department_id
+WHERE Departments.department_name = 'Science';
+
+
+
+SELECT Courses.course_id, Courses.course_name
+FROM Courses
+JOIN CourseRegistrations ON Courses.course_id = CourseRegistrations.course_id
+WHERE CourseRegistrations.student_id = 1;
+
+
+SELECT Courses.course_id, Courses.course_name, COUNT(CourseRegistrations.student_id) AS EnrollmentCount
+FROM Courses
+LEFT JOIN CourseRegistrations ON Courses.course_id = CourseRegistrations.course_id
+GROUP BY Courses.course_id, Courses.course_name;
+
+SELECT program_id, program_name
+FROM Programs
+WHERE department_id = (
+    SELECT department_id
+    FROM Departments
+    WHERE department_name = 'Science'
+);
+
+SELECT course_id, course_name
+FROM Courses
+WHERE program_id = (
+    SELECT program_id
+    FROM Programs
+    WHERE program_name = 'Bachelor of Science'
+);

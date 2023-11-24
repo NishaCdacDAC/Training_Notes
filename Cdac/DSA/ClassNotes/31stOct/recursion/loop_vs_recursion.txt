@@ -1,0 +1,3 @@
+*) loop has only ascending phase whereas recursion has both ascending and descending phases.
+
+*) recursion requires more memory as variables of method are assigned memory every time method call is done.

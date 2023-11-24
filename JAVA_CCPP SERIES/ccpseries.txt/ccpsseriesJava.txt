@@ -1,0 +1,88 @@
+CAns:2) I chose the online center for my PG-DAC course at CDAC Trivandrum for several specific reasons:
+
+
+
+
+Ans:3) a) Git is an Open Source Distributed Version Control System for tracking changes in the computer files.
+b) It is generally used for source code mangaement in software development. 
+c) It creates a history of all changes made to a project, making it easy to revert to earlier versions if needed. 
+d) Git is distributed, which means that each developer has a complete copy of the entire project history on their local machine.
+
+Git enables multiple developers to work on the same project simultaneously. It facilitates collaboration by allowing team members to merge their changes while maintaining a record of who made what changes.
+With Git, each developer has their own copy of the project, which means they can work offline and independently. It's particularly useful for open-source projects with contributors from around the world.
+Git allows developers to create branches to work on new features or bug fixes without affecting the main codebase. This helps in isolating changes and prevents conflicts.
+Git provides security through user authentication and access control mechanisms. It helps in managing and securing the source code.
+Git acts as a backup system for your code. If files are lost or a mistake is made, it's often possible to recover an earlier state of the project.
+
+
+Ans:4) Linux is an open-source, Unix-like operating system kernel that serves as the core of various Linux-based operating systems, often referred to as Linux distributions. It was created by Linus Torvalds in 1991.
+Linux is a multi-user and multi-tasking operating system. Multiple users can log in and run processes concurrently.
+Linux is known for its stability and security. It's less susceptible to viruses and malware, making it a preferred choice for servers and critical systems.
+
+
+
+The Linux command line is highly extensible, and users can combine commands and use options to perform a wide range of tasks, from basic file operations to system administration and network management.
+some of the LINUX Commands are: 
+ls: List files and directories in the current directory.
+cd: Change the current working directory.
+pwd: Print the current working directory.
+touch: Create an empty file.
+mkdir: Create a new directory.
+rmdir: Remove an empty directory.
+rm: Remove files or directories.
+cp: Copy files or directories.
+mv: Move or rename files and directories.
+cat: Display the contents of a file.
+
+
+Ans: 5) LINUX
+1. Linux is open-source and typically free to use.
+ 2.Linux uses the Linux kernel and is based on Unix principles. It is known for its stability, security, and support for various hardware architectures.
+ 3.  Linux provides a wide range of desktop environments (e.g., GNOME, KDE, Xfce) and window managers, allowing users to choose their preferred graphical user interface. Command-line interfaces are also common.
+ 4. Linux typically uses file systems like ext4, XFS, and Btrfs. It is known for its robust file system support, journaling, and support for case-sensitive file paths.
+ 5.  Linux is renowned for its security features and is less susceptible to viruses and malware. Security updates and patches are actively maintained by the open-source community.
+ 6. Linux is often administered through the command line, which offers powerful control over the system. Various commands and scripting capabilities are available.
+ WINDOWS
+ 1.  Windows is proprietary software, and you need to purchase a license to use it. There are various editions of Windows with different pricing.
+ 2. Windows uses the Windows NT kernel. It is primarily designed for x86 and x64 architectures, limiting its compatibility with other hardware platforms.
+ 3. Windows provides a consistent graphical user interface across all versions, with Windows Explorer as the default file manager. Command Prompt and PowerShell are the primary command-line interfaces.
+ 4. Windows primarily uses NTFS (New Technology File System) for its file system. While NTFS offers advanced features, it may not be as compatible with other systems as some Linux file systems.
+ 5. Windows is a common target for malware and viruses. Microsoft releases regular security updates, but the popularity of Windows makes it a frequent target for security threats.
+ 6. While Windows offers a command-line interface (Command Prompt and PowerShell), it is more user-friendly for the average user and focuses on a graphical user interface.
+ 
+ Ans:9: Inheritance is one of the key features of Object-Oriented Programming (OOP) that allows us to create new classes that share the properties of existing classes. It is a way to establish a relationship between classes where one class (the subclass or child class) inherits the attributes and behaviors of another class (the superclass or parent class). In Java, inheritance is used to create a hierarchy of classes, which helps in code organization, reuse, and extensibility.
+1) Single Inheritance:
+Single inheritance refers to a situation where a class inherits from only one superclass. 
+In Java, all classes are allowed to inherit from only a single class.
+2) Multilevel Inheritance:
+Multilevel inheritance occurs when a class is derived from another class, and that derived class is further used as a base class for another class.
+Suppose there is class A which extends from class B and B extends from C is known as multilevel inheritance.
+3) Hierarchical Inheritance:
+Hierarchical inheritance is a situation where multiple classes inherit from a single superclass.
+Or if a single parent class has a two-child class then also it is known as hierarchical inheritance.
+Hybrid Inheritance:
+Hybrid inheritance is a combination of multiple inheritance types, such as single and multiple or multilevel and multiple inheritance, within a single program.
+
+
+
+
+Ans: 11) Abstract class
+1) Abstract class can have abstract and non-abstract methods
+2) Abstract class doesn't support multiple inheritance
+3) Abstract class can have final, non-final, static and non-static variables.
+4) A Java class can extend only one abstract class, using the extends keyword.
+5) Abstract classes are often used when you want to provide a common base class for related classes, share implementation details among them, and define a partial implementation.
+6) Abstract classes can have constructors, and they are usually used to initialize fields or perform other common operations in the subclasses.
+
+Interface
+1) Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
+2) Interface supports multiple inheritance.
+3) Interface has only static and final variables.
+4) A Java class can implement multiple interfaces, providing a way to achieve multiple inheritance in terms of method contracts.
+5) Interfaces are used to define a contract specifying a set of methods that different classes should implement. They allow for polymorphism and defining a common set of methods that various classes can adhere to.
+6) Interfaces cannot have constructors because they are not meant to be instantiated.
+
+Ans: 12) Multiple inheritance can lead to ambiguity when trying to call a method. For example, if a class extends two classes that both have a method with the same name, the compiler cannot decide which method to call. This can lead to errors and unexpected behavior.
+Multiple inheritance can make code more complex and difficult to understand. This is because it can be difficult to keep track of which methods are inherited from which classes, and how they interact with each other.
+Multiple inheritance can also make it difficult to override methods. This is because if a class inherits a method from a superclass, it cannot override that method unless it is declared as abstract. This can be a problem if the class needs to provide a different implementation of the method.
+

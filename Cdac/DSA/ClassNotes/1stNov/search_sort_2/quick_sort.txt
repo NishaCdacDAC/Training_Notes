@@ -1,0 +1,71 @@
+Quick Sort :
+	It follows divide and conquer strategy.
+
+Steps :
+
+1) Select 1st element as pivot.
+2) We need to find sorted position of this element , it should come at such place that all elements smaller than it will come to its left and larger will be at right.
+3) Take i starting from pivot and j starting from last element of the array. i for elements smaller than pivot and j for elements larger than pivot.
+4) i will stop at last element and j will stop at pivot.
+5) increment i until we find element larger than pivot and decrement j until we find element smaller than pivot and then exchange them.
+6) if i becomes greater than j then stop and don't exchange the numbers. position shown by j is new position for pivot. Send the pivot element at the position shown by j now.
+
+
+partition(start , end) {
+	
+	pivot = arr[start];
+	i = start;
+	j = end;
+
+	while(i < j) {	
+		do {
+			i++;
+		}	
+		while(arr[i] <= pivot);
+
+		do {
+			j--;		
+		}
+		while(arr[j] > pivot);
+		
+		if(i < j)
+		swap(arr[i],arr[j]);
+	}
+	swap(arr[start],arr[j]);
+	return j;
+}
+
+
+quicksort(start,end) {
+
+	if(start < end) {
+		j = partition(start,end);		// j = 7
+		quicksort(start,j);
+		quicksort(j+1,end);	
+	}
+}
+
+
+we keep on creating partitions in case of quick sort. if n elements are there , then 
+
+if something is getting divided by 2 everytime, how many times it will divide such that it reaches 1?
+i.e. n/2/2/2/2/.... = 1
+i.e.
+	n/2^k = 1
+	n = 2^k
+	k = log n(base 2)
+
+assuming that it will compare elements for n times at each level (every time),  Time complexity of quick sort is O(nlogn). 
+
+[best case considering partitioning will always happen at middle]
+median : middle element of sorted list , it can not be said that everytime median will be the pivot element , hence best case scenario is not possible to be implemented. It can just occur randomly.
+
+[worst case : list is already sorted] O(n^2)
+
+
+10 6 8 12 15 6 3 9 5 20
+
+
+
+
+

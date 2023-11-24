@@ -1,0 +1,13 @@
+
+Tree Traversal In Case Of Binary Tree (DFS : Depth First Traversal):- 
+
+1) Pre-Order : (root,left,right)
+
+2) In-Order : (left,root,right)
+
+3) Post-Order : (left,right,root)
+
+
+BFS(Breadth First Traversal) : 
+
+	15 , 10 , 20 , 8 , 12  , 17 , 25

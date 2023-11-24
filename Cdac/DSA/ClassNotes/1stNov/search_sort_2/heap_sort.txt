@@ -1,0 +1,73 @@
+Array representation of binary tree :- 
+
+If node is at index i :-
+
+left child : 2 * i
+right child : 2 * i + 1
+parent at = floor(i/2)
+
+A B C D E F G 
+
+1 2 3 4 5 6 7 
+
+
+A B C D E
+
+1 2 3 4 5
+
+
+A B C D E (B has no childern nodes)
+
+A B C - - D E
+
+1 2 3 4 5 6 7
+
+with gaps it is not a complete binary tree. height of complete binary tree should be minimum (log n)
+
+
+heap : complete binary tree. 
+
+max heap : every node has value >= all of its child nodes (descendents)
+50 30 20 15 10 8 16
+ 
+min heap : every node has value <= all of its child nodes (descendents)	
+10 30 20 35 40 32 25
+
+
+
+
+Adding new element into the heap :
+
+50 30 20 15 10 8 16
+
+add 60 in this max heap , time for insertion (O(1) to O(log n)) , direction of adjustment is upwards.
+new element is added as leaf node and then it is adjusted in upwards direction i.e. towards the root.
+
+
+removing element from heap :
+
+	only root element is deleted in a heap. if root is removed then last elemnt from the tree comes at root's place. Then bring the largest child of the new root in place of the root if the child is larger than the root node. So movement is from root towards leaf.
+	Continue this process till your reach the leaf node.
+
+	Hence , everytime the largest element is going to get deleted. we can keep those deleted elements in the last positions of the array , and eventually the array becomes sorted.
+
+
+Heap Sort (O(nlogn)): Steps 
+	1) create a heap from the given set of elements (time taken : nlogn)
+	2) then delete elements from heap one by one
+
+e.g. 10 20 15 30 40
+
+n log n  + n log n = 2n log n   = O(n log n)  
+
+Heapify : 
+
+	10 20 15 12 40 25 18
+
+
+
+
+
+
+
+

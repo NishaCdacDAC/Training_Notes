@@ -1,0 +1,109 @@
+Codd's 12 rules for Relational Databases:
+
+For a database management system to be called as a Relational 
+Database Management System (RDBMS),it must satisfy these 12 rules, 
+which was proposed by Dr. Edgar F Codd (E.F Codd). 
+
+Rule 0: The foundation Rule:
+
+Any system which claims itself to be a Relational Database Management 
+System (RDBMS), that system must be capable to manage a database 
+through it's relational capabilities.
+
+The other 12 rules are based on this rule.
+
+Rule 1: The information rule:
+
+Every information, including the metadata must be stored in the cell of 
+a table as a value.
+
+Rule 2: The Guaranteed access Rule:
+
+Every unique piece of data (atomic value) must be logically accessible 
+by the combination of table name, primary key value and Attribute.
+
+Ex: SELECT NAME FROM STUDENT WHERE RNO=002;
+
+Name: Attribute,
+RNO=002 : Primary key value
+and 
+Student: Table Name.
+
+Rule 3 : Systematic Treatment of Null values:
+
+NULL values have several meaning , such as No Value, missing info,
+inapplicable info, unknown data. 
+
+The Primary key MUST NOT be Null.
+The Null value must be independent of datatype.
+
+Rule 4: Dynamic Online Catalog based on the Relational Model:
+
+The database dictionary must have a description of the database,
+so that the same relational language can be used for interrogation.
+
+Same query language has to be appied on the catalogue as
+that of the application database.
+
+Rule 5: Comprehensive Data Sublanguage Rule:
+
+There must be a well structured language with a well defined syntax, 
+expressible as character strings, and support the following: 
+1) Data Definition 
+2) Data Manipulation
+3) Integrity Constraints
+4) Transaction Control etc.
+
+Rule 6: View Updation Rule:
+
+A view is said to be a virtual table.
+
+All views that are theoretically updatable must be updatable by the
+system as well.
+
+Rule 7: Relational Level operation /High Level insert, update, delete:
+
+DBMS must support the operation like insertion, updation and 
+deletion at each level of relations.
+
+
+Rule 8: Physical Data independence: 
+
+Application Programs, user activities and a structure of a database remains unchanged 
+logically if any changes are made in the storage representation or
+access methods
+
+Rule 9: Logical data independence: 
+
+If there is a change in the logical structure (table structure) of the data, the user view 
+of the data should not change.
+
+Ex: If a table is split into two tables, a new view should give 
+the result as the sum of the two tables.
+
+Rule 10: Integrity Independence:
+
+Relational Database must be definable in the database language and
+stored in the catalog (database dictionary), not in the application 
+program.
+
+
+Rule 11: Distribution Independence: 
+
+A database shall work properly regardless of it's distribution across 
+a network.
+
+Application programs and activities must remain unchanged if the 
+data distribution is first used or redistributed.
+
+Rule 12: Non Subversion Rule:
+
+If the relational system supports the low level language, then 
+it cannot be used to bypass the integrity rules and constraints
+expressed in the high level language.
+
+
+
+
+
+

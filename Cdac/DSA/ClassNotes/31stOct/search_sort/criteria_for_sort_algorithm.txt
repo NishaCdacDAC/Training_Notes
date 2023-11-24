@@ -1,0 +1,42 @@
+5 criterias for sorting algorithm :-
+
+*) Bubble Sort :- (no. of passes : n - 1)
+
+1) number of comparisons	1 + 2 + 3 + ... + (n-1) i.e. n(n-1)/2 i.e. O(n^2)
+
+2) number of swaps		(n-1-i) in each pass (where i is number of current pass)
+
+3) is it adaptive? 	using flag yes , if list is already sorted it takes min time (O(n))
+
+4) is it stable?	yes (maintains the relative order of the items with equal sort keys)
+
+5) does it require extra memory? no , changes elements in the same array
+
+
+
+
+*) Insertion Sort :- (no. of passes : n - 1)
+
+1) number of comparisons	1 + 2 + 3 + ... + (n-1) i.e. n(n-1)/2 i.e. O(n^2)
+
+2) number of swaps		(n-1-i) in each pass (where i is number of current pass)
+
+3) is it adaptive? 		yes , if list is already sorted it takes min time (O(n))
+
+4) is it stable?		yes (maintains the relative order of the items with equal sort keys)
+
+5) does it require extra memory? no , changes elements in the same array
+
+
+*) Selection Sort :- (no. of passes : n - 1)
+
+1) number of comparisons	1 + 2 + 3 + ... + (n-1) i.e. n(n-1)/2 i.e. O(n^2)
+
+2) number of swaps		1 in each pass
+
+3) is it adaptive? 		no , if list is already sorted it doesn't reduce time
+
+4) is it stable?		no (doesn't maintain the relative order of the items who are equal)
+
+5) does it require extra memory? no , changes elements in the same array
+ 

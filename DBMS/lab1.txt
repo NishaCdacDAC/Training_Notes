@@ -1,0 +1,73 @@
+1) CREATE TABLE student (
+    name CHAR(20),
+    rollno NUMBER(3),
+    marks NUMBER(3)
+);
+INSERT INTO student (name, rollno, marks) VALUES ('Jeni', 101, 650);
+INSERT INTO student (name, rollno, marks) VALUES ('Anu', 102, 720);
+INSERT INTO student (name, rollno, marks) VALUES ('Bala', 103, 580);
+INSERT INTO student (name, rollno, marks) VALUES ('Elizabeth', 104, 680);
+
+SELECT name, rollno FROM student;
+SELECT name, rollno FROM student WHERE marks > 600;
+
+
+
+
+2) CREATE TABLE EMPLOYEE (
+    empcode NUMERIC,
+    empname VARCHAR(255),
+    basicpay NUMERIC,
+    DA NUMERIC,
+    grosspay NUMERIC
+);
+INSERT INTO EMPLOYEE (empcode, empname, basicpay, DA, grosspay)VALUES (1, 'John', 25000, NULL, NULL);
+INSERT INTO EMPLOYEE (empcode, empname, basicpay, DA, grosspay)VALUES (2, 'Jeni', 45000, NULL, NULL);
+INSERT INTO EMPLOYEE (empcode, empname, basicpay, DA, grosspay)VALUES (3, 'Nisha', 65000, NULL, NULL);
+INSERT INTO EMPLOYEE (empcode, empname, basicpay, DA, grosspay)VALUES (4, 'Elizabeth', 15000, NULL, NULL);
+
+UPDATE EMPLOYEE
+SET DA = basicpay * 0.60;
+
+SELECT empcode, empname, basicpay, DA, grosspay
+FROM EMPLOYEE
+WHERE basicpay > 20000;
+
+
+3) CREATE TABLE STUDENT (
+    ROLLNO NUMBER PRIMARY KEY,
+    NAME VARCHAR2(10) NOT NULL,
+    ADDRESS CHAR(20),
+    EMAILID VARCHAR2(30),
+    TOTAL_MARK NUMBER
+);
+
+CREATE TABLE STUDENT (
+    ROLLNO INT PRIMARY KEY,
+    NAME VARCHAR(10) NOT NULL,
+    ADDRESS CHAR(20),
+    EMAILID VARCHAR(30),
+    TOTAL_MARK INT
+);
+
+INSERT INTO STUDENT (ROLLNO, NAME, ADDRESS, EMAILID, TOTAL_MARK) VALUES (1, 'jaya', 'Kollam', 'jaya@example.com', 85);
+
+INSERT INTO STUDENT (ROLLNO, NAME, ADDRESS, EMAILID, TOTAL_MARK)VALUES (2, 'Alice', 'Pune', 'alice@example.com', 92);
+
+INSERT INTO STUDENT (ROLLNO, NAME, ADDRESS, EMAILID, TOTAL_MARK)VALUES (3, 'Anu', 'Kottayam', 'anu@example.com', 78);
+
+
+INSERT INTO STUDENT (ROLLNO, NAME)VALUES(5, 'Ammu');
+
+SELECT * FROM STUDENT;
+
+
+4) ALTER TABLE STUDENT ADD PHONE NUMBER(10);
+
+
+ALTER TABLE STUDENT DROP PRIMARY KEY;
+ALTER TABLE STUDENT ADD PRIMARY KEY (NAME);
+
+ALTER TABLE Student RENAME ADDRESS TO  ADDR;
+
+ALTER TABLE STUDENT CHANGE COLUMN ADDRESS ADDR VARCHAR(20);

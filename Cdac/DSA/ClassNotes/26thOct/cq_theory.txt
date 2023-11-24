@@ -1,0 +1,63 @@
+rear = (rear + 1) % capacity;
+
+rear = 4 
+
+rear = (4 + 1) % 5 = 0
+
+
+
+rear = (rear + 1) % capacity;
+
+rear = 0 
+
+rear = (0 + 1) % 5 = 1
+
+
+if((rear + 1) % capacity == front)
+queue is full
+
+rear = 1;
+front = 2;
+
+(1 + 1) % 5 == 2
+
+2 % 5 == 2
+
+
+if((rear + 1) % capacity == front)
+queue is full
+
+rear = 4;
+front = 0;
+
+(4 + 1) % 5 == 0
+
+5 % 5 == 0
+
+
+1) if((rear + 1) % capacity == front)
+   queue is full
+
+2) if(front == -1)
+   queue is empty
+
+3) if(front == rear)
+   it means only 1 element in queue now
+
+   now if you dequeue then queue becomes empty
+	hence now assign -1 to both front and rear
+	(i.e. front = rear = -1;)	
+
+4) in case of dequeue() , to move front below is the formula : -
+
+	front = (front + 1) % capacity;	
+
+
+
+
+
+
+
+
+
+

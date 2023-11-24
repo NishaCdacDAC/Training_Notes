@@ -1,0 +1,23 @@
+steps to create a table:
+
+step 1: create the database:
+
+CREATE DATABASE database_name;
+
+step 2: Creating a table:
+
+CREATE TABLE a table:
+
+CREATE TABLE table_name(
+Column1 int,
+Column2 varchar(3),
+Column3 date
+);
+create table student(RollNo,
+Name varchar(10), 
+Birthdate date,
+age int, 
+marks int );
+
+
+

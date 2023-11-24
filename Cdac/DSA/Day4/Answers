@@ -1,0 +1,45 @@
+Q.2.Ans: 
+       6
+      / \
+     4   8
+    / \ / \
+   3  5 7  9
+   
+   In-order Traversal (Left-Root-Right):
+In-order traversal will give the elements of the tree in sorted order.
+Traversal Order: 3 4 5 6 7 8 9
+
+Pre-order Traversal (Root-Left-Right):
+Pre-order traversal starts at the root and traverses the tree in a top-down manner.
+Traversal Order: 6 4 3 5 8 7 9
+
+Post-order Traversal (Left-Right-Root):
+Post-order traversal starts at the leaves and moves upwards to the root.
+Traversal Order: 3 5 4 7 9 8 6
+
+These are the traversal orders for the given binary tree.
+   
+   
+Q.3.Ans:
+It is a tree recursion. It creates a tree-like structure of recursive calls with multiple branches, each leading to further recursive calls, until the base cases are reached.
+
+ The function A(x, y) calculates a value based on the values of x and y by recursively calling itself until it reaches one of the base cases.
+ 
+ If x is 0, it returns y + 1. This is the base case for x.
+ 
+ If y is 0, it recursively calls A(x - 1, 1). This is the base case for y.
+ 
+ In the recursive case, when both x and y are not 0, the function makes two recursive calls:
+
+First it calls A(x - 1, A(x, y - 1)).
+The second recursive call is inside the arguments of the first call.
+To calculate A(1, 5):
+
+			1) Here x is not 0,i.e, x = 1 and y = 5
+			2) Since y is not 0, A(1 - 1, A(1, 5 - 1)) ----> A(0, A(1, 4))
+			3) Evaluate A(0, A(1, 4))
+			4) y + 1, which is 4 + 1 = 5.
+			5) A(1, 5)  The output is 5 because it reaches the base case where x is 0, and it returns y + 1
+		
+		OutPut is 5
+			

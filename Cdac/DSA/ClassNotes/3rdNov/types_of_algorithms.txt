@@ -1,0 +1,18 @@
+1) Greedy algorithm :- 
+	It is used for solving optimization problems. i.e. problems that require either min or max results.
+Here there can be more than one feasible solutions but optimal solution can be only one. This method involves solving problem in stages.In each stage 1 i/p is considered from given problem and if it is feasible then we include it in the solution.
+	e.g. prim's .kruskal's algorithm.
+ 
+2) Dynamic Programming algorithm(optimization problem)  :- 
+	Here all possible solutions are found out and then the best solution is selected. Hence amount of time required may be more and problems are solved using recursive formula. It follows "principle of optimality" i.e. problem can be solved using sequence of decisions.
+	Dynamic programming works by breaking down complex problems into simpler subproblems. Then, finding optimal solutions to these subproblems. 
+	Memorization is a method that saves the outcomes of these processes so that the corresponding answers do not need to be computed when they are later needed. Saving solutions save time on the computation of subproblems that have already been encountered.
+	e.g. Floyd-Warshall algorithm , Fibonacci Series
+
+3) Backtracking algorithms :- 
+	Backtracking is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point of time.
+	e.g. N-Queen's Problem , Sum of subsets , graph coloring problem
+
+4) Branch-and-bound algorithm(optimization problem) :- 
+	BnB explores branches or nodes under a particular subset of solutions. It follows BFS. 
+	e.g. job sequencing , travelling salesman problem

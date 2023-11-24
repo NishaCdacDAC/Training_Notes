@@ -1,0 +1,48 @@
+Steps to create a table:
+
+Step 1: Create the database:
+
+Ex: CREATE DATABASE database_name;
+
+Step 2: Creating a table:
+
+CREATE TABLE table_name (
+Column1 int ,
+Column2 varchar(3),
+Column3 date
+);
+
+STEP 2: Use the Database that was created.
+
+USE database_name;
+Ex: USE CDACSEP;
+
+Step 3: Create the Student Table:
+
+create table student (RollNo int,
+Name varchar(10),
+Birthdate date,
+age int,
+marks int);
+
+STEP 4: To view the Structure of the table:
+
+DESC table_name;
+
+Ex: DESC Student;
+
+Step 5: Adding one more attribute to the Student table:
+
+ALTER TABLE table_name add column 1,column2,....column N;
+
+Step 6: Deleting the table : 
+
+DROP TABLE table_name;
+
+Ex: Drop Student;
+
+Step 7: To drop the database:
+
+DROP DATABASE database_name;
+
+Ex: DROP CDACSEP;

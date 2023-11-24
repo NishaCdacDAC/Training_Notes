@@ -1,0 +1,31 @@
+Data Structures : 
+
+1) Data structures also called data types are the particular ways of organizing data in a computer so that it can be used efficiently
+
+2) Data structure is the actual representation of the data using the implementation and the algorithms to manipulate the data elements. 
+
+3) They Are essential to write efficient algorithms and provide way to arrange data in main memory for efficient usage.
+e.g. Tree , Queue , List , etc.
+
+
+ADT (Abstract Data Type) :
+
+1) Abstract data types (ADT) are set of values (the carrier set), and operations on these values. i.e. An ADT is a collection of data and set of operations on the data. 
+
+2) It is a type (or class) of objects whose behaviour is defined by a set of values and a set of operations. 
+
+3) ADT is the logical picture of the data and the operations to manipulate the component elements of the data. 
+
+e.g. class , structure in c++ , class in java
+
+class Student {
+	private int rollno;
+	private String name;
+
+	public void showStudentDetails() {}
+
+	public void attendLecture() {}
+
+	public void sleepThroughLecture() {}
+}
+

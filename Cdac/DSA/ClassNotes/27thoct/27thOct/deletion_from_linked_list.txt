@@ -1,0 +1,28 @@
+
+10 20 30 50 40 90
+
+
+element to be deleted is 30
+
+
+1) 1st iteration of while loop
+
+temp and prev are at node 10
+
+prev = temp (i.e. prev remained at node 10)
+temp = temp.next; (i.e. temp goes to node 20)
+
+
+2) 2nd iteration of while loop
+
+prev = temp (i.e. prev goes at node 20)
+temp = temp.next; (i.e. temp goes to node 30)
+
+
+3) 3rd iteration of while loop
+
+temp.data is equal to the element(i.e. 30)
+come out of the while loop
+and delete the temp node
+
+

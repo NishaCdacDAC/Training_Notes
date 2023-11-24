@@ -1,0 +1,156 @@
+Create database LAB3;
+use LAB3;
+1)
+
+CREATE TABLE Student (
+    AdmissionNumber INT NOT NULL,
+    Name VARCHAR(20),
+    Gender CHAR(1),
+    DateOfBirth DATE,
+    Course VARCHAR(15),
+    FamilyIncome INT,
+    PRIMARY KEY (AdmissionNumber)
+);
+
+
+INSERT INTO Student (AdmissionNumber, Name, Gender, DateOfBirth, Course, FamilyIncome)
+VALUES
+(1, 'John', 'M', '1995-08-15', 'Science', 50000),
+(2, 'Jeni', 'F', '1998-04-22', 'Commerce', 60000),
+(3, 'Anil', 'M', '1997-11-10', 'Humanities', 55000),
+(4, 'Elizabeth', 'F', '1996-07-05', 'History', 48000);
+
+INSERT INTO Student (AdmissionNumber, Name, Gender, DateOfBirth, Course, FamilyIncome)
+VALUES(6, 'Rama', 'F', '1995-02-1', 'History', 30000);
+
+SELECT Name, Course
+FROM Student;
+
+
+SELECT *
+FROM Student;
+
+SELECT *
+FROM Student
+WHERE Gender = 'F';
+
+SELECT DISTINCT Course
+FROM Student;
+
+SELECT Name, Course, FamilyIncome
+FROM Student
+WHERE Course = 'Science' AND FamilyIncome < 25000;
+
+SELECT Name, Course, FamilyIncome
+FROM Student
+WHERE Course IN ('Commerce', 'Humanities');
+
+SELECT *
+FROM Student
+WHERE FamilyIncome BETWEEN 25000 AND 45000;
+
+SELECT Name
+FROM Student
+WHERE Name LIKE 'A%';
+
+SELECT *
+FROM Student
+ORDER BY FamilyIncome DESC;
+
+
+SELECT Name, FamilyIncome
+FROM Student
+WHERE Course = 'Science'
+ORDER BY FamilyIncome DESC;
+
+SELECT Name, Course
+FROM Student
+WHERE FamilyIncome = (SELECT MAX(FamilyIncome) FROM Student);
+2)CREATE TABLE STUDENT_RELATION (
+    AdmNo INT,
+    Roll INT,
+    Name VARCHAR(20),
+    Batch VARCHAR(20),
+    Marks INT,
+    Result VARCHAR(3)
+);
+2)
+
+INSERT INTO STUDENT_RELATION (AdmNo, Roll, Name, Batch, Marks, Result) VALUES
+(101, 24, 'Sachin', 'Science', 480, 'EHS'),
+(102, 14, 'Rahul', 'Commerce', 410, 'EHS'),
+(103, 4, 'Fathima', 'Humanities', 200, 'NHS'),
+(104, 12, 'Mahesh', 'Commerce', 180, 'NHS'),
+(105, 24, 'Nelson', 'Humanities', 385, 'EHS'),
+(106, 8, 'Joseph', 'Commerce', 350, 'EHS'),
+(108, 24, 'Shaji', 'Humanities', 205, 'NHS'),
+(109, 2, 'Bincy', 'Science', 300, 'EHS');
+
+SELECT * FROM STUDENT_RELATION WHERE Result = 'EHS';
+
+
+SELECT * FROM STUDENT_RELATION WHERE Batch = 'Commerce' AND Result = 'NHS';
+
+SELECT * FROM STUDENT_RELATION WHERE Batch IN ('Science', 'Commerce');
+
+SELECT AdmNo, Name FROM STUDENT_RELATION WHERE Result = 'EHS';
+
+SELECT Name, Marks FROM STUDENT_RELATION WHERE Batch = 'Humanities' AND Result = 'NHS';
+
+
+3) CREATE TABLE ARTISTS (
+    artist_id INT,
+    artist_name VARCHAR(20),
+    label_owner VARCHAR(20)
+);
+
+INSERT INTO ARTISTS (artist_id, artist_name, label_owner) VALUES
+(101, 'Ed Sheeran', 'Warner Music Group'),
+(120, 'Drake', 'Warner Music Group'),
+(125, 'Bad Bunny', 'Rimas Entertainment');
+
+
+
+SELECT *
+FROM artist
+CROSS JOIN song ON artist.artist_id = song.artist_id;
+
+
+SELECT *
+FROM ARTISTS
+INNER JOIN SONGS ON ARTISTS.artist_id = SONGS.artist_id;
+
+
+SELECT ARTISTS.artist_id, ARTISTS.artist_name, ARTISTS.label_owner, SONGS.song_id, SONGS.name
+FROM ARTISTS
+LEFT JOIN SONGS ON ARTISTS.artist_id = SONGS.artist_id;
+
+SELECT ARTISTS.artist_id, ARTISTS.artist_name, ARTISTS.label_owner, SONGS.song_id, SONGS.name
+FROM ARTISTS
+RIGHT JOIN SONGS ON ARTISTS.artist_id = SONGS.artist_id;
+
+SELECT *
+FROM ARTISTS
+CROSS JOIN SONGS ON ARTISTS.artist_id = SONGS.artist_id;
+
+SELECT *
+FROM ARTISTS
+CROSS JOIN SONGS;
+
+
+
+SELECT ARTISTS.artist_id, ARTISTS.artist_name, ARTISTS.label_owner, SONGS.song_id, SONGS.name
+FROM ARTISTS
+FULL OUTER JOIN SONGS ON ARTISTS.artist_id = SONGS.artist_id;
+
+SELECT *
+FROM ARTISTS
+INNER JOIN SONGS ON ARTISTS.artist_id = SONGS.artist_id;
+
+SELECT ARTISTS.artist_id, ARTISTS.artist_name, ARTISTS.label_owner, SONGS.song_id, SONGS.name
+FROM ARTISTS
+LEFT JOIN SONGS ON ARTISTS.artist_id = SONGS.artist_id;
+
+SELECT ARTISTS.artist_id, ARTISTS.artist_name, ARTISTS.label_owner, SONGS.song_id, SONGS.name
+FROM ARTISTS
+RIGHT JOIN SONGS ON ARTISTS.artist_id = SONGS.artist_id;

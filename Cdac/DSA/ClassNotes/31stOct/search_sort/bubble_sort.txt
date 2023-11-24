@@ -1,0 +1,69 @@
+Bubble Sort :-
+
+Bubble sort is a sorting algorithm that compares two adjacent elements and swaps them until they are in the intended order.
+
+Here each of the heavy elements (large element) goes at the ending positions and the lighter elements(smaller elements) rise up (come at the starting positions) , hence called "Bubble Sort".
+
+considering n elements are to be sorted :
+
+comparisons required => 1 + 2 + 3 + ... + (n-1) => n(n-1)/2  => O(n2)
+
+Time complexity(worst case) : O(n^2)
+Time complexity(best case) : O(n)
+
+It is an adaptive algorithm as the order of elements affects the time complexity. We make it adaptive using flag variable.
+
+
+Algorithm :- 
+
+Follow the below steps to solve the problem:
+
+*) Run a nested for loop to traverse the input array using two variables i and j, such that 0 ≤ i < n-1 and 0 ≤ j < n-i-1
+*) If arr[j] is greater than arr[j+1] then swap these adjacent elements, else move on
+*) Print the sorted array
+
+
+
+	for(int i = 0 ; i < arr.length - 1 ; i++) {
+		int flag = 0;
+		
+		for(int j = 0 ; j < arr.length - 1 - i ; j++) {
+
+			if(arr[j] > arr[j+1]) {
+				int temp = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1] = temp;	
+				flag = 1;
+			}
+		}
+
+		if(flag == 0)
+		  BREAK;	
+	}
+
+	8,5,7,3,2
+
+	pass 1(1st iteration of outer loop) :-
+		 
+			1) j = 0 , at end of 1st iteration of inner loop :- 5,8,7,3,2
+			2) j = 1 , at end of 2nd iteration of inner loop :- 5,7,8,3,2
+			3) j = 2 , at end of 2nd iteration of inner loop :- 5,7,3,8,2
+			4) j = 3 , at end of 3rd iteration of inner loop :- 5,7,3,2,8
+			5) j = 4 , leave the inner loop
+
+	
+	pass 2(2nd iteration of outer loop) :-	 
+			1) 
+	
+
+
+
+
+	12,23,34,45,67
+
+
+
+
+
+
+

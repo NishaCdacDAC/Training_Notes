@@ -1,0 +1,80 @@
+A Tree data structure :
+	It is defined as a collection of objects or entities known as nodes that are linked together to represent or simulate hierarchy.
+
+It is a non-linear data structure because it does not store nodes in a sequential manner. 
+
+It is a hierarchical structure as elements in a Tree are arranged in multiple levels.
+
+In the Tree data structure, the topmost node is known as a root node. Each node contains some data, and data can be of any type.
+
+Each node contains some data and the link or reference of other nodes that can be called children nodes.
+
+Following are some imp points about Tree data structure :-
+
+1) Root: The root node is the topmost node in the tree hierarchy. In other words, the root node is the one that doesn't have any parent.
+
+2) Child node: If the node is a descendant of any node, then the node is known as a child node.
+
+3) Parent: If the node contains any sub-node, then that node is said to be the parent of that sub-node.
+
+4) Sibling: The nodes that have the same parent are known as siblings.
+
+5) Leaf Node (External Node):- The node of the tree, which doesn't have any child node, is called a leaf node. A leaf node is the bottom-most node of the tree.
+
+6) Internal nodes: A node having atleast one child node is known as an internal node.
+
+7) Ancestor node:- An ancestor of a node is any predecessor node on a path from the root to that node. The root node doesn't have any ancestors.
+
+8) Descendant: The immediate successor of the given node is known as a descendant of a node.
+
+
+*) Properties Of Tree Data Structure :- 
+
+1) Recursive data structure: Recursion means reducing something in a self-similar manner. We can divide tree into subtrees.
+
+2) Number of edges: If there are n nodes, then there would n-1 edges. Each arrow in the structure represents the link or path. Each node, except the root node, will have atleast one incoming link known as an edge. 
+
+3) Depth of node x: The depth of node x can be defined as the length of the path from the root to the node x. One edge contributes one-unit length in the path. So, the depth of node x can also be defined as the number of edges between the root node and the node x. 
+
+4) Height of node x: The height of node x can be defined as the longest path from the node x to the leaf node.
+
+
+*) Implementation of Tree
+The tree data structure can be created by creating the nodes dynamically with the help of the pointers. (i.e. references in java)
+
+
+*) Applications Of Trees :
+
+1) Storing naturally hierarchical data: Trees are used to store the data in the hierarchical structure. For example, the file system. The file system stored on the disc drive, the file and folder are in the form of the naturally hierarchical data and stored in the form of trees.
+
+2) Organize data: It is used to organize data for efficient insertion, deletion and searching. For example, a binary search tree has a logN time for searching an element.
+
+3) B-Tree and B+Tree: B-Tree and B+Tree are the tree data structures used to implement indexing in databases.
+
+4) Routing table: The tree data structure is also used to store the data in routing tables in the routers.	
+
+
+*)Types of Tree data structure :
+
+1) General Tree : In a general tree, a node can have either 0 or maximum n number of child nodes.There is no restriction imposed on the degree of the node (the number of nodes that a node can contain).
+
+2) Binary Tree : In a binary tree, each node in a tree can have maximum two child nodes.
+
+3) Binary Search Tree : It is a tree that follows some order to arrange the elements. In a Binary search tree, the value of the left node must be smaller than the parent node, and the value of the right node must be larger than the parent node.
+
+
+Note :- A tree of height h can have max 2^(h+1) - 1 nodes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

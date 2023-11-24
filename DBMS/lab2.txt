@@ -1,0 +1,46 @@
+CREATE DATABASE LAB2;
+USE LAB2;
+2)
+CREATE TABLE  ACCOUNTS  (
+    AccoNo INT(4),
+    Name VARCHAR(20),
+    Branch VARCHAR(20),
+    Amount INT(10)
+);
+
+
+INSERT INTO  ACCOUNTS  (AccoNo, Name, Branch, Amount) VALUES (1001, 'Anil', 'Trivandrum', 30000);
+
+INSERT INTO  ACCOUNTS  (AccoNo, Name, Branch, Amount) VALUES (1002, 'Sanjay', 'Ernakulam', 130000);
+
+INSERT INTO  ACCOUNTS  (AccoNo, Name, Branch, Amount) VALUES (1003, 'Meera', 'Kottaym', 275000);
+
+INSERT INTO  ACCOUNTS  (AccoNo, Name, Branch, Amount) VALUES (1004, 'Sneha', 'Kottayam', 50000);
+
+INSERT INTO  ACCOUNTS  (AccoNo, Name, Branch, Amount) VALUES(1005, 'Rajan', 'Thrissur', 75000);
+
+SELECT * FROM ACCOUNTS;
+
+SELECT * FROM ACCOUNTS
+WHERE branch = 'Ernakulam' AND amount > 50000;
+
+SELECT Accono, branch, amount FROM ACCOUNTS;
+
+
+SELECT Branch, COUNT(*) AS NumberOfAccounts FROM ACCOUNTS Group by Branch;
+
+
+INSERT INTO  ACCOUNTS  (AccoNo, Name, Branch, Amount) VALUES (1006, 'Ann', 'Kollam', 65000);
+
+
+UPDATE ACCOUNTS
+SET Amount = 100000
+WHERE Name = 'Sanjay';
+
+
+DELETE FROM ACCOUNTS
+WHERE Name = 'Anil';
+
+
+
+TRUNCATE TABLE ACCOUNTS;

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table Document</title>
+  </head>
+  <style>
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid black;
+    }
+    #year {
+      font-weight: bold;
+    }
+    #total {
+      width: 120px;
+    }
+  </style>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Year</th>
+          <th colspan="3">Total Number Of</th>
+        </tr>
+        <tr>
+          <th>Cases</th>
+          <th>Person Killed</th>
+          <th>Person Injured</th>
+        </tr>
+        <tr>
+          <td id="year">2012</td>
+          <td id="total">36174</td>
+          <td id="total">4286</td>
+          <td id="total">41915</td>
+        </tr>
+        <tr>
+          <td id="year">2013</td>
+          <td id="total">35215</td>
+          <td id="total">4258</td>
+          <td id="total">40346</td>
+        </tr>
+        <tr>
+          <td id="year">2014</td>
+          <td id="total">36282</td>
+          <td id="total">4049</td>
+          <td id="total">41096</td>
+        </tr>
+      </thead>
+    </table>
+  </body>
+</html>

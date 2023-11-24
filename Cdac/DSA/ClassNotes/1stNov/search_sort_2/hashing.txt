@@ -1,0 +1,138 @@
+Hashing :
+
+1) It is useful for searching purpose.
+
+2) Linear search requires O(n) time for searching element , Binary search requires O(logn) time but elements are required to be arranged in sorted manner.
+
+3) Hashing provides such a search method that may give us O(1) time.
+
+4) One basic form of hashing is to store the given elements at index based on their value itself. i.e. if element is 10 store at index 10 ,if element is 3 store it at index 3. Hence it is going to waste huge space.
+
+5) We can design a mathematical model to improve this.
+
+6) list of elements is called as "key space" , place where we store the elements is called as "hash table". Say there is a function h(x) = x that is mapping elements from key space to hash table.
+
+7) Now suppose we take hash function as h(x) = x % size_of_hash_table (say , size_of_hash_table = 10)
+consider elements (8,3,13,6,4,10)
+
+*) Collision resolution methods :
+
+	1) Open hashing : chaining
+	
+	2) Closed hashing : 
+		Open Addressing :
+			i) Linear Probing
+			ii) Quadratic Probing    
+			iii) Double Hashing
+
+
+i) chaining : 
+	here when we map any key , at generated index we do not store the element rather we add a chain(i.e. linkedlist) and in it element is inserted. If collision happens the element is added as next node in the chain.
+
+
+ii) linear probing :
+	here if there is a collision , the element is stored at next available position.
+
+	say new hash function is h1(x) = [h(x)+f(i)] % size,  f(i) = i where i = 0,1,2,...
+	
+	for h1(13) = [13+0] % 10 = 3 if there is a collision then take next value of i
+	
+	now , h1(13) = [13+1] % 10 = 4 (if still there is a collision then take next value of i)
+
+	Finally if we want to search for an element , use the hash function to find position , if the element is found at the position then that is it else keep on searching the element in next positions and stop the moment empty space is found.
+
+	Linear probing causes clustering of elements.
+
+iii) Quadratic Probing : 
+consider elements (8,3,13,23,43,10)
+
+	say new hash function is h1(x) = [h(x)+f(i)] % size,  f(i) = i^2 where i = 0,1,2,...
+
+
+iv) Double Hashing :
+	Double hashing is a technique that reduces clustering in an optimized way. In this technique, the increments for the probing sequence are computed by using another hash function. We use another hash function hash2(x) and look for the i*hash2(x) slot in the ith rotation. 
+
+	
+	let us take hash function as h(x) = x % size_of_hash_table
+	
+	say second hash function is h1(x) = 1 + (x % 5);
+
+	for h(x) if there is collision then go for (h(x) + i * h1(x)) % size_of_hash_table 
+
+
+
+
+
+
+
+Types of hash functions :-
+
+1) Division Method :
+	h(k) = k mod M
+
+Here,
+k is the key value, and 
+M is the size of the hash table.
+
+
+
+2) Mid Square Method.
+The mid-square method is a very good hashing method. It involves two steps to compute the hash value-
+
+Square the value of the key k i.e. k^2
+Extract the middle r digits as the hash value.
+
+Suppose the hash table has 100 memory locations. So r = 2 because two digits are required to map the key to the memory location.
+
+k = 60
+k x k = 60 x 60
+        = 3600
+h(60) = 60
+
+The hash value obtained is 60
+
+
+3) Folding Method.
+
+k = k1, k2, k3, k4, ….., kn
+s = k1+ k2 + k3 + k4 +….+ kn
+h(K)= s
+
+Here,
+s is obtained by adding the parts of the key k
+
+k = 12345
+k1 = 12, k2 = 34, k3 = 5
+s = k1 + k2 + k3
+  = 12 + 34 + 5
+  = 51 
+h(K) = 51
+
+
+4) Multiplication Method.	 
+
+This method involves the following steps:
+
+Choose a constant value A such that 0 < A < 1.
+Multiply the key value with A.
+Extract the fractional part of kA.   1235.567
+Multiply the result of the above step by the size of the hash table i.e. M.
+The resulting hash value is obtained by taking the floor of the result obtained in step 4.
+Formula:
+
+h(K) = floor (M (kA mod 1))
+
+Here,
+M is the size of the hash table.
+k is the key value.
+A is a constant value.
+
+k = 12345
+A = 0.357840
+M = 100
+
+h(12345) = floor[ 100 (12345*0.357840 mod 1)]
+               = floor[ 100 (4417.5348 mod 1) ]
+               = floor[ 100 (0.5348) ]
+               = floor[ 53.48 ]
+               = 53
